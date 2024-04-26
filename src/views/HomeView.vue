@@ -32,7 +32,7 @@
 
         </div>
         <div class="py-36 pr-16 bg-white text-black flex gap-16">
-            <img src="../assets/images/couples.jpg" alt="couple in a date" class="rounded-lg -ml-4">
+            <img src="../assets/images/couples.jpg" alt="couple in a date" class="rounded-lg -ml-4 hero">
             <div class="flex flex-col justify-end">
                 <div class="">
                     <p class="text-[#763F6E] mb-16">Fackolith labs</p>
@@ -82,6 +82,23 @@
 </template>
 
 <script setup>
+
+
+// GSAP
+import {gsap} from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
+gsap.from(".hero", {
+    duration: 3,
+    y: "100v5",
+    rotation:360,
+    ease: "linear",
+    scrollTrigger: {
+        trigger:".hero",
+        markers: true
+    }
+})
 import MainLayout from '@/components/MainLayout.vue';
 </script>
 
